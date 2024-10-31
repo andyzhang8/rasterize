@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D OBJ Viewer</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+        canvas {
+            width: 80vh;
+            height: 80vh;
+            border: 1px solid #ccc;
+            background-color: #ffffff;
+        }
+        .controls {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>3D OBJ Viewer</h1>
+    <canvas id="canvas"></canvas>
+
+    <div class="controls">
+        <div class="control-group">
+            <label for="rotateX">Rotate X:</label>
+            <input type="range" id="rotateX" min="-3.14" max="3.14" step="0.01" value="0">
+        </div>
+        <div class="control-group">
+            <label for="rotateY">Rotate Y:</label>
+            <input type="range" id="rotateY" min="-3.14" max="3.14" step="0.01" value="0">
+        </div>
+        <div class="control-group">
+            <label for="zoom">Zoom:</label>
+            <input type="range" id="zoom" min="50" max="3000" step="10" value="1000">
+
+        </div>
+        <div class="control-group">
+            <label for="opacity">Opacity:</label>
+            <input type="range" id="opacity" min="0.1" max="1" step="0.1" value="1">
+        </div>
+        
+    </div>
+
+    <script src="gl-matrix-min.js"></script>
+    <script src="renderer.js"></script>
+</body>
+</html>
